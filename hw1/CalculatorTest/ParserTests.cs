@@ -64,5 +64,13 @@ namespace CalculatorTest
             //assert
             Assert.ThrowsException<System.Exception>(() => Parser.CheckOrError(new string[4]));
         }
+        
+        [TestMethod]
+        public void CheckSuccessful()
+        {
+            string[] args = new[] { "1", "+", "&&&" };
+            //assert
+            Assert.AreEqual("1",Parser.CheckOrError(args));
+        }
     }
 }

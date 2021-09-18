@@ -31,9 +31,13 @@ namespace Calculator
                 throw new Exception("Не существует такого знака");
         }
 
-        public static void CheckOrError(string[] mass)
+        public static string CheckOrError(string[] mass)
         {
-            if (mass.Length != 3)
+            if (mass.Length==3)
+            {
+                return "1";
+            }
+            else 
                 throw new Exception("Неверная строка");
         }
     }
