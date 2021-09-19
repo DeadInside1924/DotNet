@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Globalization;
 using System.Linq.Expressions;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -9,16 +10,30 @@ namespace Calculator
 {
     public class Calculator
     {
-        private Parser parser;
-        public Calculator(string expression)
+        public Calculator()
         {
-            parser = new Parser(expression);
-
+            
         }
-        
-        public double Calculate()
+
+        public double Calculate(string expression)
         {
-            return Convert.ToDouble(new DataTable().Compute($"{parser.Value1} {parser.Operation} {parser.Value2}", null));
+            var mass = expression.Split();
+            
+            if (mass.Length != 3)
+            {
+                throw new Exception("Не верная длина выражения");
+            }
+
+            var result = mass[1] switch
+            {
+                "+" => double.Parse(mass[0]) + double.Parse(mass[2]),
+                "-" => double.Parse(mass[0]) - double.Parse(mass[2]),
+                "*" => double.Parse(mass[0]) * double.Parse(mass[2]),
+                "/" => double.Parse(mass[0]) / double.Parse(mass[2]),
+                _ => throw new Exception("Не существует такой операции")
+            };
+            
+            return result;
         }
     }
 }
