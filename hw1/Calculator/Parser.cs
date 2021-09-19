@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.Text;
 
 namespace Calculator
@@ -58,6 +59,7 @@ namespace Calculator
             }
         }
 
+        [ExcludeFromCodeCoverage]
         private void CheckOrError()
         {
             if (mass.Length != 3)
