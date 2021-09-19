@@ -53,7 +53,7 @@ namespace Calculator
         {
             get
             {
-                return ParseToDoubleOrError(mass[0]);
+                return Double.Parse(mass[0]);
             }
         }
         
@@ -61,19 +61,7 @@ namespace Calculator
         {
             get
             {
-                return ParseToDoubleOrError(mass[2]);
-            }
-        }
-        
-        private double ParseToDoubleOrError(string val)
-        {
-            try
-            {
-                return Convert.ToDouble(val);
-            }
-            catch
-            {
-                throw new Exception("Не получилось конвертировать");
+                return Double.Parse(mass[2]);
             }
         }
 
