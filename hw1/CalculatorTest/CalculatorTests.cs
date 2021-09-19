@@ -104,5 +104,17 @@ namespace CalculatorTest
             //assert
             Assert.ThrowsException<System.Exception>(() => calculator.Calculate(expression));
         }
+        
+        [TestMethod]
+        public void CalculateError_DivisionByZero()
+        {
+            //arrange
+            var calculator = new Calculator.Calculator();
+            var expression = "5 / 0";
+            //act
+            
+            //assert
+            Assert.ThrowsException<System.Exception>(() => calculator.Calculate(expression));
+        }
     }
 }

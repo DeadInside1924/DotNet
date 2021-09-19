@@ -18,6 +18,9 @@ namespace Calculator
         public double Calculate(string expression)
         {
             var mass = expression.Split();
+            if (mass[1].Equals("/") && double.Parse(mass[2]) == 0)
+                throw new Exception("Нельзя делить на ноль");
+            
             
             if (mass.Length != 3)
             {
