@@ -18,16 +18,34 @@ namespace Calculator
         {
             get
             {
-                if (mass[1] == "+")
-                    return "+";
-                else if (mass[1] == "-")
-                    return "-";
-                else if (mass[1] == "/")
-                    return "/";
-                else if (mass[1] == "*")
-                    return "*";
-                else
-                    throw new Exception("Не существует такого знака");
+                switch (mass[1])
+                {
+                    case "+":
+                    {
+                        return "+";
+                    }
+                        break;
+                    case "-":
+                    {
+                        return "-";
+                    }
+                        break;
+                    case "/":
+                    {
+                        return "/";
+                    }
+                        break;
+                    case "*":
+                    {
+                        return "*";
+                    }
+                        break;
+                    default:
+                    {
+                        throw new Exception("Не существует такого знака");
+                    }
+
+                }
             }
         }
 
