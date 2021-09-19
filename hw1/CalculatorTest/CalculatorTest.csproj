@@ -17,4 +17,8 @@
     <ProjectReference Include="..\Calculator\Calculator.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Compile Remove="MainTest.cs" />
+  </ItemGroup>
+
 </Project>

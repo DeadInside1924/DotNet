@@ -6,39 +6,62 @@ namespace Calculator
 {
     public class Parser
     {
-        public static double ParseToDoubleOrError(string expression)
+        private string[] mass;
+        public Parser(string expession)
+        {
+            mass = expession.Split(" ");
+            CheckOrError();
+        }
+
+        public string  Operation
+        {
+            get
+            {
+                if (mass[1] == "+")
+                    return "+";
+                else if (mass[1] == "-")
+                    return "-";
+                else if (mass[1] == "/")
+                    return "/";
+                else if (mass[1] == "*")
+                    return "*";
+                else
+                    throw new Exception("Не существует такого знака");
+            }
+        }
+
+        public double Value1
+        {
+            get
+            {
+                return ParseToDoubleOrError(mass[0]);
+            }
+        }
+        
+        public double Value2
+        {
+            get
+            {
+                return ParseToDoubleOrError(mass[2]);
+            }
+        }
+        
+        private double ParseToDoubleOrError(string val)
         {
             try
             {
-                return Convert.ToDouble(expression);
+                return Convert.ToDouble(val);
             }
             catch
             {
                 throw new Exception("Не получилось конвертировать");
             }
         }
-        public static string ParseOperatorOrError(string expression)
-        {
-            if (expression == "+")
-                return "+";
-            else if (expression == "-")
-                return "-";
-            else if (expression == "/")
-                return "/";
-            else if (expression == "*")
-                return "*";
-            else
-                throw new Exception("Не существует такого знака");
-        }
 
-        public static string CheckOrError(string[] mass)
+        private void CheckOrError()
         {
-            if (mass.Length==3)
-            {
-                return "1";
-            }
-            else 
-                throw new Exception("Неверная строка");
+            if (mass.Length != 3)
+                throw new Exception("Не верная длина массива");
         }
     }
 }

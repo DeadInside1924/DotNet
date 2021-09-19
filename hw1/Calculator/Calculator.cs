@@ -1,45 +1,24 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Linq.Expressions;
 using System.Text;
+using System.Text.RegularExpressions;
 
 namespace Calculator
 {
     public class Calculator
     {
-        public static double Calculate(double val1, double val2, string oper)
+        private Parser parser;
+        public Calculator(string expression)
         {
-            switch (oper)
-            {
-                case "+":
-                    {
-                        return val1 + val2;
-                    }
-                    break;
+            parser = new Parser(expression);
 
-                case "-":
-                    {
-                        return val1 - val2;
-                    }
-                    break;
-
-                case "/":
-                    {
-                        return val1 / val2;
-                    }
-                    break;
-
-                case "*":
-                    {
-                        return val1 * val2;
-                    }
-                    break;
-
-                default:
-                    {
-                       throw new Exception("Неверная строка");
-                    }
-                    break;
-            }
+        }
+        
+        public double Calculate()
+        {
+            return Convert.ToDouble(new DataTable().Compute($"{parser.Value1} {parser.Operation} {parser.Value2}", null));
         }
     }
 }

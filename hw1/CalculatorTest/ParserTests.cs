@@ -10,67 +10,75 @@ namespace CalculatorTest
     public class ParserTests
     {
         [TestMethod]
-        public void ParseDoubleSuccessful()
+        public void ParseOperationError()
         {
+            Parser parser = new Parser("5 ^ 5");
             //assert
-            Assert.AreEqual(1,Parser.ParseToDoubleOrError("1"));
+            Assert.ThrowsException<System.Exception>(() =>parser.Operation);
         }
 
         [TestMethod]
-        public void ParseDoubleError()
+        public void ParseOperationPlus()
         {
+            Parser parser = new Parser("5 + 5");
             //assert
-            Assert.ThrowsException<System.Exception>(() => Parser.ParseToDoubleOrError("q"));
+            Assert.AreEqual("+", parser.Operation);
         }
 
         [TestMethod]
-        public void ParseOperatorError()
+        public void ParseOperationMinus()
         {
+            Parser parser = new Parser("5 - 5");
             //assert
-            Assert.ThrowsException<System.Exception>(() => Parser.ParseOperatorOrError(":"));
-        }
-
-        [TestMethod]
-        public void ParseOperatorPlus()
-        {
-            //assert
-            Assert.AreEqual("+", Parser.ParseOperatorOrError("+"));
-        }
-
-        [TestMethod]
-        public void ParseOperatorMinus()
-        {
-            //assert
-            Assert.AreEqual("-", Parser.ParseOperatorOrError("-"));
+            Assert.AreEqual("-", parser.Operation);
         }
 
         [TestMethod]
         public void ParseOperatorDevision()
         {
+            Parser parser = new Parser("5 / 5");
             //assert
-            Assert.AreEqual("/", Parser.ParseOperatorOrError("/"));
+            Assert.AreEqual("/", parser.Operation);
         }
 
         [TestMethod]
         public void ParseOperatorMultiply()
         {
+            Parser parser = new Parser("5 * 5");
             //assert
-            Assert.AreEqual("*", Parser.ParseOperatorOrError("*"));
+            Assert.AreEqual("*",parser.Operation);
         }
 
         [TestMethod]
-        public void CheckError()
+        public void ParseValue1Successful()
         {
+            Parser parser = new Parser("5 + 5");
             //assert
-            Assert.ThrowsException<System.Exception>(() => Parser.CheckOrError(new string[4]));
+            Assert.AreEqual(5,parser.Value1);
         }
         
         [TestMethod]
-        public void CheckSuccessful()
+        public void ParseValue1Error()
         {
-            string[] args = new[] { "1", "+", "&&&" };
+            Parser parser = new Parser("q + 5");
             //assert
-            Assert.AreEqual("1",Parser.CheckOrError(args));
+            Assert.ThrowsException<System.Exception>(() =>parser.Value1);
+        }
+        
+        [TestMethod]
+        public void ParseValue2Successful()
+        {
+            Parser parser = new Parser("5 + 5");
+            //assert
+            Assert.AreEqual(5,parser.Value2);
+        }
+        
+        [TestMethod]
+        public void ParseValue2Error()
+        {
+            Parser parser = new Parser("5 + q");
+            //assert
+            Assert.ThrowsException<System.Exception>(() =>parser.Value2);
         }
     }
 }

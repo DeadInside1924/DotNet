@@ -12,47 +12,48 @@ namespace CalculatorTest
         public void Sum_2Plus5_7Returned()
         {
             //act
-            var result = Calculator.Calculator.Calculate(5,2,"+");
+            Calculator.Calculator calculator = new Calculator.Calculator("2 + 5");
 
             //assert
-            Assert.AreEqual(7, result);
+            Assert.AreEqual(7, calculator.Calculate());
         }
 
         [TestMethod]
         public void Subtraction_5Minus2_3Returned()
         {
             //act
-            var result = Calculator.Calculator.Calculate(5, 2, "-");
+            Calculator.Calculator calculator = new Calculator.Calculator("5 - 2");
 
             //assert
-            Assert.AreEqual(3, result);
+            Assert.AreEqual(3, calculator.Calculate());
         }
 
         [TestMethod]
         public void Multiplication_5Multiply1_5Returned()
         {
             //act
-            var result = Calculator.Calculator.Calculate(5, 1, "*");
+            Calculator.Calculator calculator = new Calculator.Calculator("5 * 1");
 
             //assert
-            Assert.AreEqual(5, result);
+            Assert.AreEqual(5, calculator.Calculate());
         }
 
         [TestMethod]
         public void Division_5Divide5_1Returned()
         {
             //act
-            var result = Calculator.Calculator.Calculate(5, 5, "/");
+            Calculator.Calculator calculator = new Calculator.Calculator("5 / 5");
 
             //assert
-            Assert.AreEqual(1, result);
+            Assert.AreEqual(1, calculator.Calculate());
         }
 
         [TestMethod]
         public void CalculateError()
         {
+            Calculator.Calculator calculator = new Calculator.Calculator("5 ^ 5");
             //assert
-            Assert.ThrowsException<System.Exception>(() => Calculator.Calculator.Calculate(5, 5, "^"));
+            Assert.ThrowsException<System.Exception>(() => calculator.Calculate());
         }
     }
 }
