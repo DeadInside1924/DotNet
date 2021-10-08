@@ -7,7 +7,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Calculator", "Calculator\Ca
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CalculatorTest", "CalculatorTest\CalculatorTest.csproj", "{13BD05BE-126B-4158-9580-5ACE8D6BC301}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SolutionFolder1", "SolutionFolder1", "{203F53F2-7167-4290-AF02-4ED3A4AB815A}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SolutionFolder1", "SolutionFolder1", "{2702854D-279B-4581-BB75-30A352A22031}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClassLibrary1", "ClassLibrary1\ClassLibrary1.ilproj", "{713FD777-E0A3-4FF8-B265-97F9EBDDD71C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,6 +25,10 @@ Global
 		{13BD05BE-126B-4158-9580-5ACE8D6BC301}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{13BD05BE-126B-4158-9580-5ACE8D6BC301}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{13BD05BE-126B-4158-9580-5ACE8D6BC301}.Release|Any CPU.Build.0 = Release|Any CPU
+		{713FD777-E0A3-4FF8-B265-97F9EBDDD71C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{713FD777-E0A3-4FF8-B265-97F9EBDDD71C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{713FD777-E0A3-4FF8-B265-97F9EBDDD71C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{713FD777-E0A3-4FF8-B265-97F9EBDDD71C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -31,5 +37,6 @@ Global
 		SolutionGuid = {FAB520AD-8A71-46B8-A060-687BDA156C0E}
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
+		{713FD777-E0A3-4FF8-B265-97F9EBDDD71C} = {2702854D-279B-4581-BB75-30A352A22031}
 	EndGlobalSection
 EndGlobal
