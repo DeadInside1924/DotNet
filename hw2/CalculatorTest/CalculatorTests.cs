@@ -3,7 +3,6 @@ using Calculator;
 using System;
 using System.Diagnostics.CodeAnalysis;
 
-
 namespace CalculatorTest
 {
     [TestClass]
