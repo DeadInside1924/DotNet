@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Calculator", "Calculator\Ca
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CalculatorTest", "CalculatorTest\CalculatorTest.csproj", "{13BD05BE-126B-4158-9580-5ACE8D6BC301}"
 EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "FSLibrary1", "FSLibrary1\FSLibrary1.fsproj", "{D42AE8EC-5856-4570-9756-0229A52C9BCD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{13BD05BE-126B-4158-9580-5ACE8D6BC301}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{13BD05BE-126B-4158-9580-5ACE8D6BC301}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{13BD05BE-126B-4158-9580-5ACE8D6BC301}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D42AE8EC-5856-4570-9756-0229A52C9BCD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D42AE8EC-5856-4570-9756-0229A52C9BCD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D42AE8EC-5856-4570-9756-0229A52C9BCD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D42AE8EC-5856-4570-9756-0229A52C9BCD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
